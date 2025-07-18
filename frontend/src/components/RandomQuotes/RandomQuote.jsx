@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './RandomQuote.css'
-// import twitter_icon from '../assests/logo.png'
-// import reload_icon from '../assests/x.png'
+
 const RandomQuote = () => {
     let quotes = [];
 
@@ -22,6 +21,7 @@ const RandomQuote = () => {
     }
     loadQuotes();
     return (
+        <>
         <div className="container">
             <div className="quote">{quote.quote}</div>
             <div>
@@ -29,14 +29,17 @@ const RandomQuote = () => {
                 <div className="bottom">
                     <div className="author">By- {quote.author.split(',')[0]}</div>
                     <div className="icons">
-                        {/* <img src={reload_icon} alt="reload" />
-                        <img src={twitter_icon} alt="twitter" /> */}
-                        <button onClick={() => { random() }}>New Quote</button>
-                        <button onClick={() => { share() }}>Share</button>
+                        <button onClick={random}>New Quote</button>
+                        <button onClick={share}>Share</button>
                     </div>
                 </div>
             </div>
+
         </div>
+            <footer >
+  ~ Made by <a href="https://github.com/Nikita-Gupta23" target="_blank" rel="noreferrer">Nikita Gupta</a>
+</footer>
+</>
     )
 }
 export default RandomQuote
