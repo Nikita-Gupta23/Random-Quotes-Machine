@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quotes-api
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn quotes_api.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: quotes_api.settings
+      - key: ALLOWED_HOSTS
+        value: "*"

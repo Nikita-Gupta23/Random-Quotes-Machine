@@ -5,7 +5,7 @@ const RandomQuote = () => {
     let quotes = [];
 
     async function loadQuotes() {
-        const response = await fetch("https://gist.githubusercontent.com/natebass/b0a548425a73bdf8ea5c618149fe1fce/raw/f4231cd5961f026264bb6bb3a6c41671b044f1f4/quotes.json")
+        const response = await fetch("http://127.0.0.1:8000/api/quotes/random/")
         quotes = await response.json();
     }
     const [quote, setQuote] = useState({
